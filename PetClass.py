@@ -18,7 +18,9 @@ class Pet:
 			self.m_happiness += amount//5
 
 	def playWithPet(self, amount):
-		self.m_happiness = (self.m_happiness + amount)%100
+		self.m_happiness = (self.m_happiness + amount)
+		if self.m_happiness > 100:
+			self.m_happiness=100
 		self.m_fullness -= amount//5
 		if self.m_fullness < 0:
 			self.m_fullness = 0

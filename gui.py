@@ -1,6 +1,8 @@
-from tkinter import*
+from tkinter import *
 import tkinter as tk
 from button_func import *
+from Model import Model
+from PetTypes import PetTypes
 # from tkinter import filedialog, Text, RIGHT, BOTH, LEFT
 
 import os
@@ -16,18 +18,18 @@ print(canvas.winfo_height())
 frame = tk.Frame(root, bg="white")
 frame.grid(row=1,columnspan =4)
 
-
+model = Model(PetTypes.ANIMAL_A)
 
 
 # frame.place(relwidth = 0.8, relheight=0.8, relx = 0.1, rely = 0.1)
 # frame.grid(row = 0, column = 0)
 # frame.grid()
 
-b1 = tk.Button(root,text = "Feed", padx = 10, pady =5, fg ="white", bg="#038cfc", command = feedAction)
+b1 = tk.Button(root,text = "Feed", padx = 10, pady =5, fg ="white", bg="#038cfc", command = lambda:feedAction(model))
 
-b2 = tk.Button(root,text = "Walk", padx = 10, pady =5, fg ="white", bg="#038cfc", command = walkAction)
+b2 = tk.Button(root,text = "Walk", padx = 10, pady =5, fg ="white", bg="#038cfc", command = lambda:walkAction(model))
 
-b3 = tk.Button(root,text = "Pet", padx = 10, pady =5, fg ="white", bg="#038cfc", command = petAction)
+b3 = tk.Button(root,text = "Pet", padx = 10, pady =5, fg ="white", bg="#038cfc", command = lambda:petAction(model))
 
 b4 = tk.Button(root,text = "Connect", padx = 10, pady =5, fg ="white", bg="#038cfc", command = connectAction)
 

@@ -1,11 +1,13 @@
-def feedAction():
-    print("YO")
+import Model
 
-def walkAction():
-    print("wee")
+def feedAction(pet):
+    pet.feed()
 
-def petAction():
-    print("good boi")
+def walkAction(pet):
+    pet.walkPet()
+
+def petAction(pet):
+    pet.petPet()
 
 def connectAction():
     print("for later")
