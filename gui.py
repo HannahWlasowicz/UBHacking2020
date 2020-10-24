@@ -1,17 +1,22 @@
+from tkinter import*
 import tkinter as tk
 from button_func import *
-from tkinter import filedialog, Text, RIGHT, BOTH, LEFT
+# from tkinter import filedialog, Text, RIGHT, BOTH, LEFT
+
 import os
 
 root = tk.Tk()
 root.title("Tamagotchi")
 
-    
-canvas = tk.Canvas(root, height = 700, width=700, bg = "#038cfc")
-canvas.grid(row = 0, columnspan =4)
+
+canvas = tk.Canvas(root, height = 600, width=600, bg = "#038cfc")
+canvas.grid(row = 0,columnspan =4)
+print(canvas.winfo_height())
 
 frame = tk.Frame(root, bg="white")
 frame.grid(row=1,columnspan =4)
+
+
 
 
 # frame.place(relwidth = 0.8, relheight=0.8, relx = 0.1, rely = 0.1)
@@ -33,7 +38,16 @@ b2.grid(row = 2, column = 1)
 b3.grid(row = 2, column = 2)
 b4.grid(row = 2, column = 3)
 
+root.update_idletasks()
+my_image = PhotoImage(file = "./photos/trexfull.png")
 
+width = canvas.winfo_width()/2
+height = canvas.winfo_height()/2
+
+print(width)
+print(height)
+
+canvas.create_image(width, height, image=my_image, anchor = CENTER)
 
 
 
