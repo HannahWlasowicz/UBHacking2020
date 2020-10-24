@@ -9,7 +9,7 @@ root = tk.Tk()
 root.title("Tamagotchi")
 
 
-canvas = tk.Canvas(root, height = 600, width=600, bg = "#038cfc")
+canvas = tk.Canvas(root, height = 400, width=400, bg = "#038cfc")
 canvas.grid(row = 0,columnspan =4)
 print(canvas.winfo_height())
 
@@ -23,13 +23,13 @@ frame.grid(row=1,columnspan =4)
 # frame.grid(row = 0, column = 0)
 # frame.grid()
 
-b1 = tk.Button(root,text = "Feed", padx = 10, pady =5, fg ="white", bg="#038cfc", command = feedAction)
+b1 = tk.Button(root,text = "Feed", padx = 10, pady =10, fg ="white", bg="#038cfc", command = feedAction, borderwidth=0)
 
-b2 = tk.Button(root,text = "Walk", padx = 10, pady =5, fg ="white", bg="#038cfc", command = walkAction)
+b2 = tk.Button(root,text = "Walk", padx = 10, pady =10, fg ="white", bg="#038cfc", command = walkAction, borderwidth=0)
 
-b3 = tk.Button(root,text = "Pet", padx = 10, pady =5, fg ="white", bg="#038cfc", command = petAction)
+b3 = tk.Button(root,text = "Pet", padx = 10, pady =10, fg ="white", bg="#038cfc", command = petAction)
 
-b4 = tk.Button(root,text = "Connect", padx = 10, pady =5, fg ="white", bg="#038cfc", command = connectAction)
+b4 = tk.Button(root,text = "Connect", padx = 10, pady =10, fg ="white", bg="#038cfc", command = connectAction, borderwidth=0)
 
 
 
