@@ -98,7 +98,7 @@ class MainPage(tk.Frame):
 
         
         self.update_idletasks()
-        my_image = PhotoImage(file = "./photos/newLongNeck.png")
+        my_image = PhotoImage(file = "./photos/longbase.png")
         self.one = my_image
 
         width = canvas.winfo_width()/2
