@@ -14,16 +14,16 @@ def connectAction():
     print("for later")
 
 def select3Horn(controller):
-    controller.model = Model("horn_boi")
+    controller.model = Model("HORN")
     controller.show_frame("MainPage")
     #switch to main gui
 
 def selectTrex(controller):
-    controller.model = Model("t_rex")
+    controller.model = Model("REX")
     controller.show_frame("MainPage")
     #switch to main gui
 
 def selectLongNeck(controller):
-    controller.model = Model("long_boi")
+    controller.model = Model("LONG")
     controller.show_frame("MainPage")
     #switch to main gui

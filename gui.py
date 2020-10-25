@@ -9,7 +9,7 @@ import os
 class SampleApp(tk.Tk):
     def __init__(self, *args, **kwargs):
             tk.Tk.__init__(self, *args, **kwargs)
-            self.model = Model("long_boi")
+            self.model = Model("LONG")
             self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
 
             self.title("Dion Nuggies")
@@ -75,8 +75,8 @@ class MainPage(tk.Frame):
         # button = tk.Button(self, text="Go to the start page",
         #                    command=lambda: controller.show_frame("StartPage"))
         self.controller.updateApp()
-        canvas = tk.Canvas(self, height = 400, width=400, bg = "#038cfc")
-        canvas.grid(row = 0,columnspan =4)
+        self.canvas = tk.Canvas(self, height = 400, width=400, bg = "#038cfc")
+        self.canvas.grid(row = 0,columnspan =4)
         self.label = tk.Label(self, text="Hunger: " + str(self.controller.model.pet.m_fullness), font=self.controller.title_font)
         self.label.grid(row = 1, column = 0)
 
@@ -100,16 +100,38 @@ class MainPage(tk.Frame):
 
         
         self.update_idletasks()
-        my_image = PhotoImage(file = "./photos/longbase.png")
+        imageName = self.getImage()
+        my_image = PhotoImage(file = imageName)
         self.one = my_image
 
-        width = canvas.winfo_width()/2
-        height = canvas.winfo_height()/2
+        self.width = self.canvas.winfo_width()/2
+        self.height = self.canvas.winfo_height()/2
 
-        print(width)
-        print(height)
+        print(self.width)
+        print(self.height)
 
-        canvas.create_image(width, height, image=my_image, anchor = CENTER)
+        self.canvas.create_image(self.width, self.height, image=my_image, anchor = CENTER)
+
+        self.updateImage()
+
+    
+    def getImage(self):
+        type = self.controller.model.pet.m_petType
+        print(type)
+        if type == "LONG":
+            return "./photos/longbase.png"
+        elif type == "REX":
+            return "./photos/trexbase.png"
+        else:
+            return "./photos/trifull.png"
+
+    def updateImage(self):
+        newImage = self.getImage()
+        my_image = PhotoImage(file = newImage)
+        self.canvas.delete("all")
+        self.one = my_image
+        self.canvas.create_image(self.width, self.height, image=my_image, anchor = CENTER)
+        self.after(100, self.updateImage)
 
     def updateLabel(self):
         self.label.configure(text="Hunger: " + str(self.controller.model.pet.m_fullness), font=self.controller.title_font)
