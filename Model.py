@@ -7,6 +7,7 @@ import time
 class Model:
 	def __init__(self, PetType):
 		self.pet = Pet(PetType)
+		self.canvas = None
 		self.gameTime = time.time()
 		self.lastUpdate = 0
 
@@ -23,8 +24,9 @@ class Model:
 		print(self.pet.m_happiness)
 
 	def update(self):
+		print(":)))))))))))))))))))))))))))))))))))))))))))))))")
 		curr = time.time()
-		if (curr - lastUpdate) > 5:
+		if (curr - self.lastUpdate) > 5:
 			self.lastUpdate = curr
 			self.pet.m_fullness -= 1
 			self.pet.m_happiness -= 1

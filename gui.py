@@ -19,7 +19,7 @@ frame = tk.Frame(root, bg="white")
 frame.grid(row=1,columnspan =4)
 
 model = Model(PetTypes.ANIMAL_A)
-
+model.canvas = canvas
 
 # frame.place(relwidth = 0.8, relheight=0.8, relx = 0.1, rely = 0.1)
 # frame.grid(row = 0, column = 0)
@@ -42,7 +42,7 @@ b3.grid(row = 2, column = 2)
 b4.grid(row = 2, column = 3)
 
 root.update_idletasks()
-my_image = PhotoImage(file = "./photos/trexfull.png")
+my_image = PhotoImage(file = "./photos/newLongNeck.png")
 
 width = canvas.winfo_width()/2
 height = canvas.winfo_height()/2
@@ -54,6 +54,7 @@ canvas.create_image(width, height, image=my_image, anchor = CENTER)
 
 
 
-
+# root.after(1000, model.update)
  
 root.mainloop()
+

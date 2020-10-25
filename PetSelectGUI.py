@@ -7,13 +7,14 @@ import os
 
 root = tk.Tk()
 root.title("Menu Select")
+root.geometry("400x400")
 
 
 # canvas = tk.Canvas(root, height = 400, width=400, bg = "#038cfc")
 # canvas.grid(row = 0,columnspan =4)
 # print(canvas.winfo_height())
 
-frame = tk.Frame(root, bg="white")
+#frame = tk.Frame(root, bg="white")
 # frame.grid(row=1,columnspan =4)
 
 
@@ -23,16 +24,19 @@ frame = tk.Frame(root, bg="white")
 # frame.grid(row = 0, column = 0)
 # frame.grid()
 
-b1 = tk.Button(root,text = "Sharp teeth", padx = 10, pady =10, fg ="white", bg="#038cfc", command = feedAction, borderwidth=0)
+b1 = tk.Button(root,text = "Sharp teeth", padx = 10, pady =10, fg ="white", bg="#038cfc", command = selectTrex)
 
-b2 = tk.Button(root,text = "3-horn", padx = 10, pady =10, fg ="white", bg="#038cfc", command = walkAction, borderwidth=0)
+b2 = tk.Button(root,text = "3-horn", padx = 10, pady =10, fg ="white", bg="#038cfc", command = select3Horn)
 
-b3 = tk.Button(root,text = "Long neck", padx = 10, pady =10, fg ="white", bg="#038cfc", command = petAction)
+b3 = tk.Button(root,text = "Long neck", padx = 10, pady =10, fg ="white", bg="#038cfc", command = selectLongNeck)
 
 
-b1.place(relx=0, rely=0.5)
-b2.place(relx=0.5, rely=0.5)
-b3.place(relx=1.0, rely=0.5)
+
+b1.place(relx=0.0, rely=0.0, anchor=CENTER)
+b2.place(relx=0.5, rely=0.0, anchor=CENTER)
+b3.place(relx=1.0, rely=0.0, anchor=CENTER)
+
+
 
 root.update_idletasks()
 # my_image = PhotoImage(file = "./photos/trexfull.png")
