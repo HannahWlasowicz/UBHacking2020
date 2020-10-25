@@ -1,4 +1,5 @@
-import Model
+from Model import *
+from gui import *
 
 def feedAction(pet):
     pet.feed()
@@ -12,14 +13,17 @@ def petAction(pet):
 def connectAction():
     print("for later")
 
-def select3Horn():
-    pet = Pet(1)
+def select3Horn(controller):
+    controller.model = Model("horn_boi")
+    controller.show_frame("MainPage")
     #switch to main gui
 
-def selectTrex():
-    pet = Pet(2)
+def selectTrex(controller):
+    controller.model = Model("t_rex")
+    controller.show_frame("MainPage")
     #switch to main gui
 
-def selectLongNeck():
-    pet = Pet(3)
+def selectLongNeck(controller):
+    controller.model = Model("long_boi")
+    controller.show_frame("MainPage")
     #switch to main gui

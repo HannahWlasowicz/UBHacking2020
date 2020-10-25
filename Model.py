@@ -1,12 +1,11 @@
-from PetTypes import PetTypes
 from PetStates import PetStates
 from PetClass import *
 import time
 
 	
 class Model:
-	def __init__(self, PetType):
-		self.pet = Pet(PetType)
+	def __init__(self, petType):
+		self.pet = Pet(petType)
 		self.canvas = None
 		self.gameTime = time.time()
 		self.lastUpdate = 0
@@ -24,7 +23,6 @@ class Model:
 		print(self.pet.m_happiness)
 
 	def update(self):
-		print(":)))))))))))))))))))))))))))))))))))))))))))))))")
 		curr = time.time()
 		if (curr - self.lastUpdate) > 5:
 			self.lastUpdate = curr
@@ -32,8 +30,6 @@ class Model:
 			self.pet.m_happiness -= 1
 		self.pet.updatePetState()
 		
-
-
 
 
 

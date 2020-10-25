@@ -1,4 +1,3 @@
-from PetTypes import PetTypes
 from PetStates import PetStates
 
 class Pet:
