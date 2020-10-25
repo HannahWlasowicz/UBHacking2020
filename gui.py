@@ -12,6 +12,8 @@ class SampleApp(tk.Tk):
             self.model = Model("long_boi")
             self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
 
+            self.title("Dion Nuggies")
+
             # the container is where we'll stack a bunch of frames
             # on top of each other, then the one we want visible
             # will be raised above the others
